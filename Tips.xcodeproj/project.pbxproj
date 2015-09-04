@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46377CBA1B9A1B700026DFD6 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46377CB91B9A1B700026DFD6 /* SettingsManager.swift */; };
 		46F91CAC1B9946A30005BF28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F91CAB1B9946A30005BF28 /* AppDelegate.swift */; };
 		46F91CAE1B9946A30005BF28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F91CAD1B9946A30005BF28 /* ViewController.swift */; };
 		46F91CB11B9946A30005BF28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46F91CAF1B9946A30005BF28 /* Main.storyboard */; };
 		46F91CB31B9946A30005BF28 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46F91CB21B9946A30005BF28 /* Images.xcassets */; };
 		46F91CB61B9946A30005BF28 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46F91CB41B9946A30005BF28 /* LaunchScreen.xib */; };
 		46F91CC21B9946A30005BF28 /* TipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F91CC11B9946A30005BF28 /* TipsTests.swift */; };
+		46F91CCC1B995D620005BF28 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F91CCB1B995D620005BF28 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		46377CB91B9A1B700026DFD6 /* SettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		46F91CA61B9946A30005BF28 /* Tips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46F91CAA1B9946A30005BF28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46F91CAB1B9946A30005BF28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 		46F91CBB1B9946A30005BF28 /* TipsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46F91CC01B9946A30005BF28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46F91CC11B9946A30005BF28 /* TipsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsTests.swift; sourceTree = "<group>"; };
+		46F91CCB1B995D620005BF28 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +81,9 @@
 		46F91CA81B9946A30005BF28 /* Tips */ = {
 			isa = PBXGroup;
 			children = (
+				46F91CCD1B995D680005BF28 /* View Controllers */,
 				46F91CAB1B9946A30005BF28 /* AppDelegate.swift */,
+				46377CB91B9A1B700026DFD6 /* SettingsManager.swift */,
 				46F91CAD1B9946A30005BF28 /* ViewController.swift */,
 				46F91CAF1B9946A30005BF28 /* Main.storyboard */,
 				46F91CB21B9946A30005BF28 /* Images.xcassets */,
@@ -110,6 +116,14 @@
 				46F91CC01B9946A30005BF28 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		46F91CCD1B995D680005BF28 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				46F91CCB1B995D620005BF28 /* SettingsViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,8 +226,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46377CBA1B9A1B700026DFD6 /* SettingsManager.swift in Sources */,
 				46F91CAE1B9946A30005BF28 /* ViewController.swift in Sources */,
 				46F91CAC1B9946A30005BF28 /* AppDelegate.swift in Sources */,
+				46F91CCC1B995D620005BF28 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +425,7 @@
 				46F91CC71B9946A30005BF28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		46F91CC81B9946A30005BF28 /* Build configuration list for PBXNativeTarget "TipsTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +434,7 @@
 				46F91CCA1B9946A30005BF28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

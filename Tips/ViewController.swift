@@ -17,16 +17,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        tipLabel.text = "$0.00"
-        totalLabel.text = "$0.00"
+        setDefaultText()
+        setDefaultTip()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
 
     @IBAction func onEditingChanged(sender: AnyObject) {
         var tipPercentages = [0.18, 0.2, 0.22]
@@ -45,5 +42,13 @@ class ViewController: UIViewController {
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
     }
+    
+    func setDefaultText() {
+        tipLabel.text = "$0.00"
+        totalLabel.text = "$0.00"
+    }
+    
+    func setDefaultTip() {
+        tipControl.selectedSegmentIndex = SettingsManager.getDefaultSegIndex()
+    }
 }
-
