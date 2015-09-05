@@ -15,6 +15,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTipsSegment()
+        SettingsManager.setDefaultTipChanged(false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,7 +27,12 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func onDefaultTipChange(sender: AnyObject) {
-        SettingsManager.setDefaultSegIndex(defaultTipsControl.selectedSegmentIndex)
+        var selectedSegment = defaultTipsControl.selectedSegmentIndex
+        
+        if selectedSegment != SettingsManager.getDefaultSegIndex() {
+            SettingsManager.setDefaultTipChanged(true)
+            SettingsManager.setDefaultSegIndex(selectedSegment)
+        }
     }
     
     func setTipsSegment() {

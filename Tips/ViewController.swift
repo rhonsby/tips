@@ -20,12 +20,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setDefaultText()
+        setTipAsUserDefault()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        setTipAsUserDefault()
+        
+        if SettingsManager.getDefaultTipChanged() {
+            setTipAsUserDefault()
+        }
+        
         updateViewWithTipAndTotal()
+        focusOnBillField()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,9 +47,8 @@ class ViewController: UIViewController {
     }
     
     func updateViewWithTipAndTotal() {
-        var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
-        var billAmount = billField.text._bridgeToObjectiveC().doubleValue
-        var tip = billAmount * tipPercentage
+        var billAmount = getBillAmount()
+        var tip = billAmount * getTipPercentage()
         var total = billAmount + tip
         
         tipLabel.text = "$\(tip)"
@@ -60,5 +65,17 @@ class ViewController: UIViewController {
     
     func setTipAsUserDefault() {
         tipControl.selectedSegmentIndex = SettingsManager.getDefaultSegIndex()
+    }
+    
+    func focusOnBillField() {
+        billField.becomeFirstResponder()
+    }
+    
+    func getTipPercentage() -> Double {
+        return tipPercentages[tipControl.selectedSegmentIndex]
+    }
+    
+    func getBillAmount() -> Double {
+        return billField.text._bridgeToObjectiveC().doubleValue
     }
 }
