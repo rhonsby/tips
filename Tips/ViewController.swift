@@ -21,9 +21,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setLabelText(defaultTextValue, total: defaultTextValue)
-        setTipAsUserDefault()
+        setDefaults()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -47,6 +45,11 @@ class ViewController: UIViewController {
     
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
+    }
+    
+    func setDefaults() {
+        setLabelText(defaultTextValue, total: defaultTextValue)
+        setTipAsUserDefault()
     }
     
     func updateViewWithTipAndTotal() {
