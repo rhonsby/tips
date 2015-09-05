@@ -16,10 +16,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipControl: UISegmentedControl!
     
     let tipPercentages = [0.18, 0.2, 0.22]
+    let currencyFormatter = CurrencyFormatter()
+    let defaultTextValue = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setDefaultText()
+        
+        setLabelText(defaultTextValue, total: defaultTextValue)
         setTipAsUserDefault()
     }
     
@@ -51,16 +54,12 @@ class ViewController: UIViewController {
         var tip = billAmount * getTipPercentage()
         var total = billAmount + tip
         
-        tipLabel.text = "$\(tip)"
-        totalLabel.text = "$\(total)"
-        
-        tipLabel.text = String(format: "$%.2f", tip)
-        totalLabel.text = String(format: "$%.2f", total)
+        setLabelText(tip, total: total)
     }
     
-    func setDefaultText() {
-        tipLabel.text = "$0.00"
-        totalLabel.text = "$0.00"
+    func setLabelText(tip: Double, total: Double) {
+        tipLabel.text = currencyFormatter.stringFromNumber(tip);
+        totalLabel.text = currencyFormatter.stringFromNumber(total);
     }
     
     func setTipAsUserDefault() {
