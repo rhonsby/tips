@@ -13,11 +13,11 @@ class CurrencyFormatter: NSObject {
     
     override init() {
         formatter = NSNumberFormatter()
-        formatter.locale = NSLocale.currentLocale()
         formatter.numberStyle = .CurrencyStyle
     }
     
     func stringFromNumber(number: Double) -> String! {
+        formatter.locale = NSLocale.currentLocale()
         return formatter.stringFromNumber(number);
     }
 }
